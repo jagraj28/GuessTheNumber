@@ -5,11 +5,15 @@ randomNumber = random.randint(1,20)
 userName = input("Hi! What is your name?: ")
 
 guessesMade = 0
-print("Well " + userName + ", I'm thinking of a number between 1 and 20, can you guess it within 5 attempts?")
+print("Well " + userName + ", I'm thinking of a number between 1 and 20, can you guess it?")
 
 # loop created so user only has 5 guesses
 while guessesMade < 5:
-    Try = int(input("What's your guess?: ")) 
+    try:
+        Try = int(input("What's your guess?: ")) 
+    except ValueError:
+        print("Ah come on, that's not a number! Try again!")
+        continue
     guessesMade = guessesMade + 1
     if Try == randomNumber: # loop stops and moves to code further down
         break
@@ -24,4 +28,4 @@ if Try == randomNumber:
     print('Good job, ' + userName + '! You guessed my number in ' + guessesMade + ' guesses!')
 else:
     randomNumber = str(randomNumber)
-    print('Unlucky! The number I was thinking of was ' + randomNumber)
+    print('Unlucky! The number I was thinking of was ' + randomNumber + " !")
