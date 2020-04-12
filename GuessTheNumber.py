@@ -5,7 +5,7 @@ randomNumber = random.randint(1,20)
 userName = input("Hi! What is your name?: ")
 
 guessesMade = 0
-print("Well " + userName + ", I'm thinking of a number between 1 and 20, can you guess it?")
+print("Well " + userName + ", I'm thinking of a number between 1 and 20, can you guess it in 5 attempts?")
 
 # loop created so user only has 5 guesses
 while guessesMade < 5:
